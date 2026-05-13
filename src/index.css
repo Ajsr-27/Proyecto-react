@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+
+/* =========================
+   VARIABLES GLOBALES
+========================= */
+
+:root {
+  /* 🎨 Colores */
+  --color-primary: #9e8477;
+  --color-secondary: #baa08f;
+  --color-terciary: #bfad95;
+  --color-dark: #111827;
+  --color-light: #f9fafb;
+  --color-fourth: #c3aa94;
+  --color-fifth: #ecd1b8;
+
+  /* 🔤 Tipografías */
+
+  --font-logo: "montserrat", sans-serif;
+  --font-body: "simonetta", sans-serif;
+}
+
+@font-face {
+  font-family: "montserrat";
+  src: url("./assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "simonetta";
+  src: url("./assets/fonts/Simonetta/Simonetta-Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: var(--montserrat);
+  background-color: var(--color-primary);
+  
+}
