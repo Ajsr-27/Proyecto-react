@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "Remeras Básicas",
+    "precio": 12000,
+    "stock": 20,
+    "imagen": "/Images/remeras.webp"
+  },
+  {
+    "id": 2,
+    "nombre": "Buzo Ligero",
+    "precio": 15000,
+    "stock": 15,
+    "imagen": "/Images/buzo-ligero.webp"
+  },
+  {
+    "id": 3,
+    "nombre": "Cartera Crema",
+    "precio": 50000,
+    "stock": 10,
+    "imagen": "/Images/cartera-crema.webp"
+  },
+  {
+    "id": 4,
+    "nombre": "Lentes De Sol",
+    "precio": 24500,
+    "stock": 8,
+    "imagen": "/Images/lentes-de-sol.webp"
+  },
+  {
+    "id": 5,
+    "nombre": "Musculosas Basicas",
+    "precio": 10000,
+    "stock": 50,
+    "imagen": "/Images/musculosas.webp"
+  },
+  {
+    "id": 6,
+    "nombre": "Perfume Unisex",
+    "precio": 60000,
+    "stock": 10,
+    "imagen": "/Images/perfume-unisex.webp"
+  },
+  {
+    "id": 7,
+    "nombre": "Short Deportivo",
+    "precio": 25000,
+    "stock": 12,
+    "imagen": "/Images/short-deportivo.webp"
+  },
+  {
+    "id": 8,
+    "nombre": "Zapatillas",
+    "precio": 70000,
+    "stock": 8,
+    "imagen": "/Images/zapatillas.webp"
+  }
+]
