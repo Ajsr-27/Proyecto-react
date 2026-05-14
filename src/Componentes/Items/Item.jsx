@@ -15,8 +15,8 @@ export function Item({ productos }) {
                         alt={producto.nombre} width="150" />
 
                         <div>
-                            <h2>{producto.nombre}</h2>
-                            <p className="mb-13">Precio: ${producto.precio}</p>
+                            <h2 className="text-2xl font-semibold">{producto.nombre}</h2>
+                            <p className="mb-13 text-xl">Precio: ${producto.precio}</p>
                             <AgregarCarrito texto="Agregar al carrito" />
                         </div>
                     </div>

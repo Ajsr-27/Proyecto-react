@@ -33,7 +33,7 @@ function Productos ({Mensaje}){
     }
     return (
         <div className='text-center  '> 
-            <h2 className='font-bold'>{Mensaje}</h2>
+            <h2 className='font-bold text-3xl'>{Mensaje}</h2>
             <div >
                 <Item productos={productos} />
             </div>

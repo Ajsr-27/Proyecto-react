@@ -4,10 +4,10 @@ export function FormularioProducto({ datosForm = {}, manejarCambio, manejarEnvio
     return (
         <div className="flex flex-col w-full h-auto m-12 p-2 bg-(--color-fifth) border-solid rounded-lg gap-4">
             <form onSubmit={manejarEnvio}>
-                <h3 className="text-lg font-semibold mb-4">Agregar Nuevo Producto</h3>
+                <h3 className="text-xl font-bold mb-4">Agregar Nuevo Producto</h3>
 
                 <div className="mb-3 ">
-                    <label className="block mb-1 ">Nombre del Producto:</label>
+                    <label className="block mb-1 text-lg font-medium ">Nombre del Producto:</label>
                     <input
                         type="text"
                         placeholder="Ej: Teclado Mecánico"
@@ -19,7 +19,7 @@ export function FormularioProducto({ datosForm = {}, manejarCambio, manejarEnvio
                 </div>
 
                 <div className="mb-3">
-                    <label className="block mb-1">Precio:</label>
+                    <label className="block mb-1 text-lg font-medium">Precio:</label>
                     <input
                         type="number"
                         placeholder="Ej: 95"
@@ -31,7 +31,7 @@ export function FormularioProducto({ datosForm = {}, manejarCambio, manejarEnvio
                 </div>
 
                 <div className="mb-3">
-                    <label className="block mb-1">Stock:</label>
+                    <label className="block mb-1 text-lg font-medium ">Stock:</label>
                     <input
                         type="number"
                         placeholder="Ej: 20"
@@ -42,14 +42,14 @@ export function FormularioProducto({ datosForm = {}, manejarCambio, manejarEnvio
                     />
                 </div>
 
-                <div className="mb-3 flex flex-row gap-2">
-                    <label className="block mb-1">Imagen: </label>
-                    <input type="file" className="w-full" />
+                <div className="mb-3 flex flex-row items-center gap-2">
+                    <label className="block mb-1 text-lg font-medium">Imagen: </label>
+                    <input type="file" className="w-full cursor-pointer hover:text-(--color-light)" />
                 </div>
 
                 <button
                     type="submit"
-                    className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                    className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600 w-full"
                 >
                     Guardar Producto
                 </button>

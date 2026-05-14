@@ -1,19 +1,16 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import ItemListContainer from "../Items/ItemListContainer";
-import FormularioContenedor from "../Formulario/FormularioContenedor";
-
+import Header from '../layout/Header'
+import Footer from '../layout/Footer'
+import { Outlet } from 'react-router-dom'; // Importamos Outlet
+// Todo lo que pongamos dentro de <Layout> en App.jsx será el "children".
 function Layout({ children }) {
     return (
-        <div>
+        <>
             <Header />
-            <main className="min-h-screen p-5 text-2xl text-(--color-dark)">
-                    {children}
-                    <ItemListContainer Mensaje="Nuestros Productos Destacados" />
-                    <FormularioContenedor />
+            <main>
+                <Outlet />
             </main>
             <Footer />
-        </div>
+        </>
     );
-}
+};
 export default Layout;

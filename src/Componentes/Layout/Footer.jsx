@@ -18,7 +18,7 @@ function Footer() {
                         alt="CEO Miembro del equipo"
                     />
                     <div className="flex flex-col">
-                        <strong>JHONLEN CORREA</strong>
+                        <strong>JOHNLEN CORREA</strong>
                         <p className="text-sm">CEO</p>
                     </div>
                 </div>
@@ -55,9 +55,8 @@ function Footer() {
                 <nav>
                     <ul className="flex flex-col gap-6 text-lg">
                         <li className="hover:text-(--color-primary)"><a href="">INICIO</a></li>
-                        <li className="hover:text-(--color-primary)"><a href="">PRODUCTOS</a></li>
+                        <li className="hover:text-(--color-primary)"><a href="">DESTACADOS</a></li>
                         <li className="hover:text-(--color-primary)"><a href="">CONTACTO</a></li>
-                        <li className="hover:text-(--color-primary)"><a href="">INFORMACION</a></li>
                     </ul>
                 </nav>
                 <div className="flex flex-col gap-4 justify-center items-center ">
