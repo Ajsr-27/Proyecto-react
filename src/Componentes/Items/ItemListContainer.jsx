@@ -7,7 +7,7 @@ function Productos ({Mensaje}){
     const [cargando, setCargando] = useState(true);
 
     useEffect(() => {
-        fetch('/data/productos.json')
+        fetch(`${import.meta.env.BASE_URL}data/productos.json`)
             .then((respuesta) => {
                 if (!respuesta.ok) {
                     throw new Error('No se pudo cargar la información de los productos');
