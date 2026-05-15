@@ -11,7 +11,7 @@ export function Item({ productos }) {
                     <div className="border-white text-left  h-60 w-110 border-2 rounded-lg p-4 m-4 flex justify-between items-center gap-4 ">
                         <img
                         className="flex object-contain h-60 w-40" 
-                        src={producto.imagen} 
+                        src={`${import.meta.env.BASE_URL}${producto.imagen}`} 
                         alt={producto.nombre} width="150" />
 
                         <div>
