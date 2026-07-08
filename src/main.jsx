@@ -1,11 +1,14 @@
 import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client'
+import { CartProvider } from './Context/CartContext.jsx';
 import './index.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <HashRouter>
-    <App />
+    <CartProvider>
+      <App />
+    </CartProvider>
   </HashRouter>
 );
 
