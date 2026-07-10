@@ -6,8 +6,8 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <div>
-        <h1 className="text-3xl font-bold text-center mt-10">El carrito está vacío</h1>
+      <div className="h-screen flex flex-col items-center justify-center">
+        <h1 className="text-3xl font-bold text-center">El carrito está vacío</h1>
         <p className="text-center mt-5">Agrega productos para continuar la compra.</p>
       </div>
     );

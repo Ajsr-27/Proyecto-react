@@ -12,7 +12,8 @@ function NavBar() {
             <ul className="flex items-end justify-ceneter gap-10 text-lg ">
                 <li className="hover:text-(--color-primary)"><Link to="/">INICIO</Link></li>
                 <li className="hover:text-(--color-primary)"><Link to="/productos">DESTACADOS</Link></li>
-                <li className="hover:text-(--color-primary)"><Link to="/contacto">CONTACTO</Link></li>
+                <li className="hover:text-(--color-primary)"><Link to="/gestion de productos">GESTION</Link></li>
+                <li className="hover:text-(--color-primary)"><Link to="/login">LOGIN</Link></li>
                 <li className="hover:text-(--color-fourth)"><Link to="/carrito" className="flex items-center "><MdOutlineShoppingCart size={30} />{totalItems > 0 && <span
                 className="bg-[#9e8477] rounded-full text-black px-2">{totalItems}</span>}</Link></li>
             </ul>
