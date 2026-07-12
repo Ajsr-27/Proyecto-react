@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// Importaciones clave de Firebase
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/config';
+import { capitalizarPrimeraLetra } from '../Capitalice/Formato';
 
 const ProduBD = () => {
     // Estado para guardar los productos que traigamos de la DB
@@ -29,8 +29,7 @@ uno */}
                         <img src={prod.imagen} alt={prod.nombre} style={{
                             width: '200px'
                         }} />
-                        <h3>{prod.nombre}</h3>
-                        <p>Categoría: {prod.categoria}</p>
+                        <h3>{capitalizarPrimeraLetra(prod.nombre)}</h3>
                         <p>Precio: ${prod.precio}</p>
                         <p>Stock: {prod.stock} unidades</p>
                         <hr />
