@@ -6,7 +6,7 @@ function Inicio() {
     return (
         <>
             <ItemListContainer Mensaje={"Bienvenido a Neko Store"} />
-            <GestionProductos />
+            
         </>
     );
 }

@@ -23,14 +23,12 @@ const Registro = () => {
             // Aquí es donde manejamos el caso específico que nos interesa
             if (error.code === 'auth/email-already-in-use') {
                 // Usamos window.confirm para hacer la pregunta al usuario
-                const quiereLoguearse = window.confirm('Este correo electrónico ya está registrado. ¿Deseaintentar iniciar sesión ? ');
+                const quiereLoguearse = window.confirm('Este correo electrónico ya está registrado. ¿Desea intentar iniciar sesión?');
                 if (quiereLoguearse) {
-                    // Si el usuario confirma, lo redirigimos a la página de
-                    login
+                    // Si el usuario confirma, lo redirigimos a la página de login
                     navigate('/login');
                 } else {
-                    // Si el usuario cancela, lo redirigimos a la página de
-                    inicio
+                    // Si el usuario cancela, lo redirigimos a la página de inicio
                     navigate('/');
                 }
             } else {
@@ -44,11 +42,11 @@ const Registro = () => {
     }; 
 
         return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="bg-white rounded-3xl shadow-xl w-full max-w-4xl flex overflow-hidden m-4">
+            <div className="min-h-screen flex items-center justify-center px-2 sm:px-4">
+                <div className="bg-white rounded-3xl shadow-xl w-full max-w-4xl flex overflow-hidden m-2 sm:m-4">
 
                     {/* Panel izquierdo con degradé */}
-                    <div className="hidden md:flex flex-col justify-between w-1/2 p-8 bg-gradient-to-br from-(--color-primary) via-(--color-fourth) to-(--color-fifth) rounded-2xl m-3">
+                    <div className="hidden md:flex flex-col justify-between w-1/2 p-8 bg-linear-to-br from-(--color-primary) via-(--color-fourth) to-(--color-fifth) rounded-2xl m-3">
                         <span className="text-transparent text-4xl font-bold">*</span>
                         <div className="text-taupe-900">
                             <p className="text-2xl mb-2">Podés fácilmente</p>
@@ -59,8 +57,8 @@ const Registro = () => {
                     </div>
 
                     {/* Panel derecho con el formulario */}
-                    <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                        <h1 className="text-2xl font-bold mb-2">Bienvenido a Neko Store</h1>
+                    <div className="w-full md:w-1/2 p-5 sm:p-8 md:p-12 flex flex-col justify-center">
+                        <h1 className="text-xl sm:text-2xl font-bold mb-2">Bienvenido a Neko Store</h1>
                         <p className="text-gray-500 text-sm mb-6">
                             Accedé a tus pedidos, favoritos y perfil en un solo lugar.
                         </p>

@@ -6,7 +6,7 @@ export const useCart = () => {
 
     const context = useContext(CartContext);
     if (!context) {
-        throw new Error("useCart debe ser usado dentro de un CartProvider');");
+        throw new Error("useCart debe ser usado dentro de un CartProvider");
     }
     return context;
 };
@@ -26,6 +26,18 @@ export const CartProvider = ({ children }) => {
         }
     }; // Busca si el producto ya está en el carrito. Si está → suma la cantidad. Si no está → lo agrega como nuevo.
 
+    const removeOneFromCart = (id) => {
+        setCart((prevCart) =>
+            prevCart
+                .map((item) =>
+                    item.id === id
+                        ? { ...item, quantity: item.quantity - 1 }
+                        : item
+                )
+                .filter((item) => item.quantity > 0) // si llega a 0, se elimina del carrito
+        );
+    }; // Resta 1 unidad de un producto. Si la cantidad llega a 0, lo saca del carrito.
+
     const clearCart = () => {
         setCart([]);
     }; //Vacía el carrito
@@ -39,13 +51,8 @@ export const CartProvider = ({ children }) => {
     }; // Recorre el carrito y suma el precio de cada producto multiplicado por su cantidad. Sirve para mostrar el total a pagar.
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, clearCart, getCartQuantity, getCartTotal }}>
+        <CartContext.Provider value={{ cart, addToCart, removeOneFromCart, clearCart, getCartQuantity, getCartTotal }}>
             {children}
         </CartContext.Provider>
     );
 };
-
-
-
-
-

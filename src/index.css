@@ -32,8 +32,14 @@
   src: url("./assets/fonts/Simonetta/Simonetta-Regular.ttf") format("truetype");
 }
 
+html,body, #root {
+  height: 100%;
+}
+
 body {
   font-family: var(--montserrat);
   background-color: var(--color-primary);
+  height: 100%;
   
 }
+

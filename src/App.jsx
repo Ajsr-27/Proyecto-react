@@ -1,20 +1,23 @@
 import ItemListContainer from "./Componentes/Items/ItemListContainer";
 import { Routes, Route } from 'react-router-dom';
 import Layout from "./Componentes/Layout/Layout";
-import Inicio from "./Componentes/Layout/Inicio";
 import Cart from "./Componentes/Cart/Cart";
 import Login from "./Componentes/Login/Login";
 import Registro from "./Componentes/Login/Registro";
 import ProduBD from "./Componentes/ProductosBD/ProductosBD";
 import GestionProductos from "./Componentes/GestionProductos/GestionProductos";
 import ProtectedRoute from "./Componentes/ProtectedRoute/PotectedRoute";
+import GestionCupones from "./Componentes/GestionCupones/GestionCupones";
 
 function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/productos" element={<ItemListContainer Mensaje={"Productos Destacados"} />} />
+        <Route path="/" element={<ProduBD />} />
+        <Route path="/GestionCupones"
+          element={<ProtectedRoute rolesPermitidos={['admin']}>
+            <GestionCupones />
+          </ProtectedRoute>} />
         <Route path="/login" element={<Login />} />
         <Route path="/produBD" element={<ProduBD />} />
         <Route path="/GestionProductos"

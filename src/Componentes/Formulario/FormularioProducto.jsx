@@ -2,9 +2,9 @@ import React from 'react';
 
 export function FormularioProducto({ datosForm = {}, manejarCambio, manejarEnvio,manejarCambioImagen }) {
     return (
-        <div className="flex flex-col w-full h-auto m-12 p-2 bg-(--color-fifth) border-solid rounded-lg gap-4">
+        <div className="flex flex-col w-full h-auto max-w-2xl mx-auto my-4 sm:my-8 md:m-12 p-3 sm:p-4 bg-(--color-fifth) border-solid rounded-lg gap-4">
             <form onSubmit={manejarEnvio}>
-                <h3 className="text-xl font-bold mb-4">Agregar Nuevo Producto</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-4">Agregar Nuevo Producto</h3>
 
                 <div className="mb-3 ">
                     <label className="block mb-1 text-lg font-medium ">ID del Producto:</label>
@@ -53,13 +53,13 @@ export function FormularioProducto({ datosForm = {}, manejarCambio, manejarEnvio
                     />
                 </div>
 
-                <div className="mb-3 flex flex-row items-center gap-2">
-                    <label className="block mb-1 text-lg font-medium">Imagen: </label>
+                <div className="mb-3 flex flex-col sm:flex-row sm:items-center gap-2">
+                    <label className="block mb-1 text-lg font-medium shrink-0">Imagen: </label>
                     <input
                         type="file"
                         name="imagen"
                         onChange={manejarCambioImagen}
-                        className="w-full cursor-pointer hover:text-(--color-light)"
+                        className="w-full cursor-pointer hover:text-(--color-light) text-sm sm:text-base"
                     />
                 </div>
 

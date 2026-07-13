@@ -159,9 +159,9 @@ const GestionProductos = () => {
 
   return (
     <div>
-      <h2>Gestión de Productos</h2>
+      <h2 className="text-xl sm:text-2xl text-center font-bold mb-4">Gestión de Productos</h2>
 
-      <div className="flex flex-col items-center w-4xl m-auto">
+      <div className="flex flex-col items-center w-full max-w-4xl mx-auto px-3 sm:px-0">
         <FormularioProducto
           datosForm={datosForm}
           manejarCambio={manejarCambio}
@@ -169,23 +169,38 @@ const GestionProductos = () => {
           manejarEnvio={manejarEnvio}
         />
         {docIdEditando && (
-          <button onClick={cancelarEdicion}>Cancelar edición</button>
+          <button className='text-center text-lg cursor-pointer font-medium rounded-lg p-1 mb-2 bg-[#f8af99] text-black mt-2 mr-3 hover:bg-red-700' onClick={cancelarEdicion}>
+            Cancelar edición
+          </button>
         )}
-      </div>
 
+      </div>
       <hr />
-      <h3>Lista de Productos</h3>
-      <ul>
+      <h3 className="text-lg sm:text-xl font-bold mb-2 text-center">Lista de Productos</h3>
+      <ul className="flex flex-col gap-2 px-3 sm:px-0 max-w-4xl mx-auto">
         {productos.map((prod) => (
-          <li key={prod.docId}>
-            ID {prod.id} - {prod.nombre} - ${prod.precio} -
-            <button onClick={() => handleEditar(prod)}> Editar </button>
-            <button onClick={() => handleDelete(prod.docId)}> Eliminar </button>
+          <li key={prod.docId} className="border border-gray-700 p-2 gap-3 sm:gap-5 flex flex-col sm:flex-row items-start sm:items-center">
+            <span className="text-sm sm:text-base break-words"> ID {prod.id} - {prod.nombre} - ${prod.precio}</span>
+
+            <div className="flex flex-row sm:flex-col gap-2 sm:ml-auto w-full sm:w-auto">
+              <button
+                className="text-center text-base sm:text-lg rounded-lg cursor-pointer font-medium p-1 bg-[#d2e97d] text-black hover:bg-blue-700 flex-1 sm:flex-none"
+                onClick={() => handleEditar(prod)}
+              >
+                Editar
+              </button>
+              <button
+                className="text-center text-base sm:text-lg font-medium rounded-lg cursor-pointer p-1 bg-[#f8af99] text-black hover:bg-red-700 flex-1 sm:flex-none"
+                onClick={() => handleDelete(prod.docId)}
+              >
+                Eliminar
+              </button>
+            </div>
           </li>
         ))}
       </ul>
     </div>
   );
-};
+}
 
 export default GestionProductos;
