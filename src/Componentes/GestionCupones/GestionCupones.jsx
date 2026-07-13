@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { collection, getDocs, addDoc, deleteDoc, doc } from 'Firebase/firestore';
+import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../Firebase/Config';
 
 function GestionCupones() {
