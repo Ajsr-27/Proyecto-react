@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase/Config';
+import { db } from '../../Firebase/Config';
 import { capitalizarPrimeraLetra } from '../Capitalice/Formato';
 import AgregarCarrito from '../Boton/AgregarCarrito';
 import { useCart } from '../../Context/CartContext';
