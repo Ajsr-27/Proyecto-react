@@ -6,7 +6,7 @@ import Login from "./Componentes/Login/Login";
 import Registro from "./Componentes/Login/Registro";
 import ProduBD from "./Componentes/ProductosBD/ProductosBD";
 import GestionProductos from "./Componentes/GestionProductos/GestionProductos";
-import ProtectedRoute from "./Componentes/ProtectedRoute/PotectedRoute";
+import ProtectedRoute from "./Componentes/ProtectedRoute/ProtectedRoute";
 import GestionCupones from "./Componentes/GestionCupones/GestionCupones";
 
 function App() {
