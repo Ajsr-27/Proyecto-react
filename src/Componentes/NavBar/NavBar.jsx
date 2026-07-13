@@ -1,11 +1,13 @@
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { useCart } from "../../Context/CartContext";
+import { useAuth } from '../../Context/AuthContext';
 
 function NavBar() {
 
-    const {getCartQuantity} = useCart();
+    const { getCartQuantity } = useCart();
     const totalItems = getCartQuantity();
+    const { user, logout } = useAuth();//agregamos los datos de autenticación
 
     return (
         <nav className="flex pr-20">
@@ -13,12 +15,21 @@ function NavBar() {
                 <li className="hover:text-(--color-primary)"><Link to="/">INICIO</Link></li>
                 <li className="hover:text-(--color-primary)"><Link to="/productos">DESTACADOS</Link></li>
                 <li className="hover:text-(--color-primary)"><Link to="/produBD">PRODUCTOS BD</Link></li>
-                <li className="hover:text-(--color-primary)"><Link to="/GestionProductos">GESTION</Link></li>
-                <li className="hover:text-(--color-primary)"><Link to="/login">LOGIN</Link></li>
                 <li className="hover:text-(--color-fourth)"><Link to="/carrito" className="flex items-center "><MdOutlineShoppingCart size={30} />{totalItems > 0 && <span
-                className="bg-[#9e8477] rounded-full text-black px-2">{totalItems}</span>}</Link></li>
+                    className="bg-[#9e8477] rounded-full text-black px-2">{totalItems}</span>}</Link></li>
+                {user ? (
+                    <>{/* Mostrar Gestion SOLO si el usuario es admin */}
+
+                        {user.rol === 'admin' && (<li className="hover:text-(--color-primary)"><Link to="/GestionProductos">GESTION</Link></li>)}
+
+                        <span>Hola, {user.email}</span>
+                        <button onClick={logout}>Cerrar Sesión</button>
+                    </>
+                ) : (
+                    <li className="hover:text-(--color-primary)"><Link to="/login">LOGIN</Link></li>
+                )}
             </ul>
-        </nav> 
+        </nav>
     )
-}
+};
 export default NavBar

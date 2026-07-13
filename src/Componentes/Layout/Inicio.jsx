@@ -1,12 +1,12 @@
 // src/Componentes/Inicio/Inicio.jsx
 import ItemListContainer from "../Items/ItemListContainer";
-import FormularioContenedor from "../Formulario/FormularioContenedor";
+import GestionProductos from "../GestionProductos/GestionProductos";
 
 function Inicio() {
     return (
         <>
             <ItemListContainer Mensaje={"Bienvenido a Neko Store"} />
-            <FormularioContenedor />
+            <GestionProductos />
         </>
     );
 }

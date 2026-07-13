@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Registro from "./Registro";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
+const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        const auth = getAuth();
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log("Usuario logueado:", user);
+                navigate('/'); 
+            })
+
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error("Error en el login:", errorCode, errorMessage);
+                alert("Error: credenciales incorrectas " + errorMessage);
+            });
+    };
+
     return (
         <div className="min-h-screen flex items-center justify-center">
             <div className="bg-white rounded-3xl shadow-xl w-full max-w-4xl flex overflow-hidden m-4">
-                
+
                 {/* Panel izquierdo con degradé */}
                 <div className="hidden md:flex flex-col justify-between w-1/2 p-8 bg-gradient-to-br from-(--color-primary) via-(--color-fourth) to-(--color-fifth) rounded-2xl m-3">
                     <span className="text-transparent text-4xl font-bold">*</span>
@@ -25,12 +51,14 @@ function Login() {
                         Accedé a tus pedidos, favoritos y perfil en un solo lugar.
                     </p>
 
-                    <form className="flex flex-col gap-4">
+                    <form onSubmit={handleLogin} className="flex flex-col gap-4">
                         <div>
                             <label className="text-sm font-medium text-gray-700">Correo electrónico</label>
                             <input
                                 type="email"
                                 placeholder="tuemail@ejemplo.com"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 className="w-full mt-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
                             />
                         </div>
@@ -40,6 +68,8 @@ function Login() {
                             <input
                                 type="password"
                                 placeholder="••••••••••"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 className="w-full mt-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
                             />
                         </div>
