@@ -7,16 +7,20 @@ import Login from "./Componentes/Login/Login";
 import Registro from "./Componentes/Login/Registro";
 import ProduBD from "./Componentes/ProductosBD/ProductosBD";
 import GestionProductos from "./Componentes/GestionProductos/GestionProductos";
+import ProtectedRoute from "./Componentes/ProtectedRoute/PotectedRoute";
 
 function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<Inicio/>} />
+        <Route path="/" element={<Inicio />} />
         <Route path="/productos" element={<ItemListContainer Mensaje={"Productos Destacados"} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/produBD" element={<ProduBD />} />
-        <Route path="/GestionProductos" element={<GestionProductos />} />
+        <Route path="/GestionProductos"
+          element={<ProtectedRoute rolesPermitidos={['admin']}>
+            <GestionProductos />
+          </ProtectedRoute>} />
         <Route path="/carrito" element={<Cart />} />
         <Route path="/Registro" element={<Registro />} />
       </Route>
