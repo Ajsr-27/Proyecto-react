@@ -180,7 +180,7 @@ const GestionProductos = () => {
       <ul className="flex flex-col gap-2 px-3 sm:px-0 max-w-4xl mx-auto">
         {productos.map((prod) => (
           <li key={prod.docId} className="border border-gray-700 p-2 gap-3 sm:gap-5 flex flex-col sm:flex-row items-start sm:items-center">
-            <span className="text-sm sm:text-base break-words"> ID {prod.id} - {prod.nombre} - ${prod.precio}</span>
+            <span className="text-sm sm:text-base wrap-break-words"> ID {prod.id} - {prod.nombre} - ${prod.precio}</span>
 
             <div className="flex flex-row sm:flex-col gap-2 sm:ml-auto w-full sm:w-auto">
               <button
